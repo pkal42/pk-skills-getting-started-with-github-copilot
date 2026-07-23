@@ -56,6 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const participants = details.participants || [];
         const spotsLeft = details.max_participants - participants.length;
+        const escapeHtml = (value) =>
+          String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+
         const participantList = participants.length
           ? `
             <ul class="participants-list">
@@ -63,13 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 .map(
                   (participant) => `
                     <li class="participant-item">
-                      <span class="participant-email">${participant}</span>
+                      <span class="participant-email">${escapeHtml(participant)}</span>
                       <button
                         type="button"
                         class="participant-remove-button"
-                        data-activity-name="${name}"
-                        data-participant-email="${participant}"
-                        aria-label="Remove ${participant} from ${name}"
+                        data-activity-name="${escapeHtml(name)}"
+                        data-participant-email="${escapeHtml(participant)}"
+                        aria-label="Remove ${escapeHtml(participant)} from ${escapeHtml(name)}"
                         title="Remove participant"
                       >
                         <span aria-hidden="true">✕</span>
