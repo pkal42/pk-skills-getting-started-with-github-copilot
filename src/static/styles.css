@@ -59,10 +59,11 @@ section h3 {
 
 .activity-card {
   margin-bottom: 15px;
-  padding: 15px;
+  padding: 18px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.08);
 }
 
 .activity-card h4 {
@@ -72,6 +73,91 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.participants-section {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  background: #eef4ff;
+  border: 1px solid #d7e3ff;
+}
+
+.participants-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.participants-header h5 {
+  color: #1a237e;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.participants-header span {
+  font-size: 13px;
+  color: #5f6caf;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.participants-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(61, 90, 254, 0.12);
+}
+
+.participant-email {
+  color: #24324a;
+  word-break: break-word;
+}
+
+.participant-remove-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid #f2b8b5;
+  background: #fff5f5;
+  color: #b42318;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.participant-remove-button:hover {
+  background: #ffe8e6;
+  border-color: #f1998f;
+}
+
+.participant-remove-button:focus-visible {
+  outline: 3px solid rgba(57, 73, 171, 0.25);
+  outline-offset: 2px;
+}
+
+.participants-empty {
+  color: #667085;
+  font-style: italic;
 }
 
 .form-group {
